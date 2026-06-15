@@ -1,20 +1,21 @@
 import Image from "next/image";
 import { FaFlickr } from "react-icons/fa";
-const FlickrImage = ({ image }) => {
+
+const FlickrImage = ({ image, index = 0 }) => {
   return (
-    <div className="relative">
+    <div className="group relative aspect-square overflow-hidden rounded-sm">
       <Image
         src={image}
-        className="w-full h-full"
-        width="500"
-        height="300"
-        alt="/"
-        priority
+        fill
+        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
+        alt="Capture feed photograph"
+        className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0"
       />
-      <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center hover:bg-black/70 group">
-        <p className="hidden text-gray-300 group-hover:block ">
-          <FaFlickr size={30} />
-        </p>
+      <div className="absolute inset-0 flex flex-col justify-between bg-ink/0 p-3 opacity-0 transition-all duration-500 group-hover:bg-ink/55 group-hover:opacity-100">
+        <span className="font-mono text-[0.6rem] uppercase tracking-widest text-bone/80">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <FaFlickr size={22} className="self-end text-amber" />
       </div>
     </div>
   );

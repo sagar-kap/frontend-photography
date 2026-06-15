@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Hero from "@/components/Hero";
+import Manifesto from "@/components/Manifesto";
 import Slider from "@/components/Slider";
 import { SliderData } from "@/components/SliderData";
 import Flickr from "@/components/Flickr";
@@ -8,45 +9,28 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Capture</title>
+        <title>Capture — Light, held still.</title>
         <meta
           name="description"
-          content="Look through the lens of your heart!"
+          content="Capture is a fine-art nature photography studio. Golden-hour landscapes, quiet wilderness, and the light in between."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta property="og:title" content="Capture" />
+        <meta property="og:title" content="Capture — Light, held still." />
         <meta
           property="og:image"
           content="https://frontend-photography-wheat.vercel.app/_next/image?url=%2Fslider3.jpg&w=1080&q=75"
         />
         <meta
           property="og:description"
-          content="Look through the lens of your heart!"
+          content="A fine-art nature photography studio chasing golden-hour light."
         />
       </Head>
+      <span id="top" />
       <Hero
-        heading="Capture Photography"
-        message="I capture moments in nature and keep them alive."
+        heading="Light held still"
+        message="A fine-art nature studio chasing golden-hour landscapes and the quiet wilderness in between. Moments, kept alive in cotton-rag print."
       />
+      <Manifesto />
       <Slider data={SliderData} />
       <Flickr />
     </>
